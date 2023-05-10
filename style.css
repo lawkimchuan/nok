@@ -123,7 +123,7 @@ video {
   height: 100vh;
   background-color: var(--silvergrey);
   color: black;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 3;
@@ -422,6 +422,28 @@ header nav ul li a {
   opacity: 1;
 } */
 
+@-webkit-keyframes moveIn {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes moveIn {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes slideIn {
   from {
     filter: blur(15px);
@@ -493,6 +515,8 @@ header nav ul li a {
 .about {
   font-family: var(--sourcesan);
   padding-top: 6rem;
+  -webkit-animation: moveIn 1s;
+  animation: moveIn 0.6s;
 }
 
 .about p {

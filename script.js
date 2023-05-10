@@ -91,9 +91,15 @@ function resizePlayer(iframes, ratio) {
 // DOM Ready
 $(function () {
   // Initialize
+  let width = screen.width;
+  if (width < 688) {
+    document.getElementById("bubble").src = "video/bubble-mobile.mp4";
+  }
+
   slideWrapper.on("init", function (slick) {
     slick = $(slick.currentTarget);
     newSrc();
+
     setTimeout(function () {
       playPauseVideo(slick, "play");
     }, 2400);
@@ -236,5 +242,6 @@ function newSrc() {
     document.getElementById("slide3").src = "https://player.vimeo.com/video/822510328?autoplay=0&muted=1&controls=0&autopause=0";
     document.getElementById("slide4").src = "https://player.vimeo.com/video/822510689?autoplay=0&muted=1&controls=0&autopause=0";
     document.getElementById("slide5").src = "https://player.vimeo.com/video/822510639?autoplay=0&muted=1&controls=0&autopause=0";
+
   }
 }
