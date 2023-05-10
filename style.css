@@ -258,20 +258,10 @@ header nav ul li a {
   opacity: 0;
   visibility: hidden;
   transition: all 1.2s ease;
-  background-color: var(--silvergrey);
 }
 .main-slider.slick-initialized {
   opacity: 1;
   visibility: visible;
-}
-.slick-slide {
-  position: relative;
-  height: 100vh;
-}
-.slick-slide::before {
-  background-color: #000;
-  opacity: 0.3;
-  z-index: 1;
 }
 .slick-slide video {
   display: block;
@@ -287,7 +277,6 @@ header nav ul li a {
 .slick-slide iframe {
   position: relative;
   pointer-events: none;
-  background-color: #000;
 }
 .slick-slide figure {
   position: relative;
@@ -327,18 +316,18 @@ header nav ul li a {
 }
 .slick-slide.slick-active .caption {
   opacity: 1;
-  transform: translateY(10%);
+  transform: translateY(0);
   transition: all 0.7s cubic-bezier(0.32, 0.34, 0, 1.62) 0.6s;
 }
 
 .caption {
   font-family: var(--spacegrostesk);
-  position: absolute;
+  /* position: absolute;
   left: 0;
-  bottom: 5%;
+  top: 50%; */
   width: 100%;
   text-align: left;
-  padding: 1rem;
+  padding: 1.2rem;
   color: white;
   margin: 0;
   font-size: 0.9rem;
@@ -447,34 +436,42 @@ header nav ul li a {
 @-webkit-keyframes slideIn {
   from {
     filter: blur(15px);
+    /* opacity: 0; */
   }
   to {
     filter: blur(0);
+    /* opacity: 1; */
   }
 }
 
 @keyframes slideIn {
   from {
     filter: blur(15px);
+    /* opacity: 0; */
   }
   to {
     filter: blur(0);
+    /* opacity: 1; */
   }
 }
 @-webkit-keyframes slideOut {
   from {
     filter: blur(0);
+    /* opacity: 1; */
   }
   to {
     filter: blur(15px);
+    /* opacity: 0; */
   }
 }
 @keyframes slideOut {
   from {
     filter: blur(0);
+    /* opacity: 1; */
   }
   to {
     filter: blur(15px);
+    /* opacity: 0; */
   }
 }
 
@@ -579,6 +576,7 @@ header nav ul li a {
   .caption {
     position: absolute;
     left: 5%;
+    top: auto;
     bottom: 5%;
     width: 90vw;
     font-size: 0.9rem;
@@ -614,4 +612,16 @@ header nav ul li a {
     padding: 20px;
     left: 5%;
   } */
+
+  .slick-slide {
+    position: relative;
+    height: 100vh;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .slick-slide::before {
+    background-color: #000;
+    opacity: 0.3;
+    z-index: 1;
+  }
 }
