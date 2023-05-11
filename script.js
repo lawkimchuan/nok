@@ -64,13 +64,19 @@ function resizePlayer(iframes, ratio) {
     ratio = ratio || 16 / 9;
 
   console.log("ratio: " + ratio);
-  // console.log("width: " + width);
-  // console.log("width/ratio: " + width / ratio);
-  // console.log("height: " + height);
+  console.log("width: " + width);
+  console.log("width/ratio: " + width / ratio);
+  console.log("height: " + height);
 
-  iframes.each(function () {
+  clony = $(".slick-cloned");
+
+  var combined = iframes.add(clony);
+
+  combined.each(function () {
     var current = $(this);
-    if (width / ratio < height) {
+    //if (width / ratio < height) {
+    let scrWidth = screen.width;
+    if (scrWidth < 688) {
       console.log("portrait");
       //playerWidth = Math.ceil(height * ratio);
       playerWidth = width;
@@ -90,6 +96,7 @@ function resizePlayer(iframes, ratio) {
 
 
 
+
 }
 
 // DOM Ready
@@ -98,6 +105,7 @@ $(function () {
   let width = screen.width;
   if (width < 688) {
     document.getElementById("bubble").src = "video/bubble-mobile.mp4";
+
   }
 
   slideWrapper.on("init", function (slick) {
@@ -113,11 +121,13 @@ $(function () {
       //mobile
       resizePlayer(iframes, 1 / 1);
       //set the source of vimeo to mobile version
-      document.getElementById("slide1").src = "https://player.vimeo.com/video/821153340?autoplay=0&muted=1&controls=0&autopause=0";
+      document.getElementById("slide1").src = "https://player.vimeo.com/video/822509710?autoplay=0&muted=1&controls=0&autopause=0";
       document.getElementById("slide2").src = "https://player.vimeo.com/video/822509710?autoplay=0&muted=1&controls=0&autopause=0";
       document.getElementById("slide3").src = "https://player.vimeo.com/video/822510328?autoplay=0&muted=1&controls=0&autopause=0";
       document.getElementById("slide4").src = "https://player.vimeo.com/video/822510689?autoplay=0&muted=1&controls=0&autopause=0";
       document.getElementById("slide5").src = "https://player.vimeo.com/video/822510639?autoplay=0&muted=1&controls=0&autopause=0";
+      document.getElementById("slide6").src = "https://player.vimeo.com/video/825722079?autoplay=0&muted=1&controls=0&autopause=0";
+      document.getElementById("slide7").src = "https://player.vimeo.com/video/825722519?autoplay=0&muted=1&controls=0&autopause=0";
     }
     else {
       resizePlayer(iframes, 16 / 9);
@@ -131,6 +141,7 @@ $(function () {
   slideWrapper.on("afterChange", function (event, slick) {
     slick = $(slick.$slider);
     playPauseVideo(slick, "play");
+
   });
   /*
   slideWrapper.on("lazyLoaded", function (event, slick, image, imageSource) {

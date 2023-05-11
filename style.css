@@ -161,6 +161,10 @@ video {
   width: 100%;
 }
 
+/* .slick-cloned {
+  visibility: hidden;
+} */
+
 .caption,
 .slick-slide::before,
 .slick-slide {
@@ -303,6 +307,7 @@ header nav ul li a {
   left: 0;
   width: 100%;
 }
+/*
 .slick-slide .slide-media {
   -webkit-animation: slideOut 0.4s cubic-bezier(0.4, 0.29, 0.01, 1);
   animation: slideOut 0.4s cubic-bezier(0.4, 0.29, 0.01, 1);
@@ -319,6 +324,7 @@ header nav ul li a {
   transform: translateY(0);
   transition: all 0.7s cubic-bezier(0.32, 0.34, 0, 1.62) 0.6s;
 }
+*/
 
 .caption {
   font-family: var(--spacegrostesk);
