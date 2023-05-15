@@ -104,7 +104,7 @@ $(function () {
   // Initialize
   let width = screen.width;
   if (width < 688) {
-    document.getElementById("bubble").src = "video/bubble-mobile.mp4";
+    document.getElementById("bubble").src = "video/bubble-mobile.webm";
 
   }
 
@@ -143,6 +143,20 @@ $(function () {
     playPauseVideo(slick, "play");
 
   });
+
+  $('.go-prev').click(function () {
+    console.log("go-prev");
+    slideWrapper.slick('slickPrev');
+  });
+
+  $('.go-next').click(function () {
+    console.log("go-next");
+    slideWrapper.slick('slickNext');
+  });
+
+  $('.haha').click(function () {
+    console.log("haha");
+  });
   /*
   slideWrapper.on("lazyLoaded", function (event, slick, image, imageSource) {
     lazyCounter++;
@@ -157,7 +171,6 @@ $(function () {
     // check if slick exist
     //start the slider
     slideWrapper.slick({
-      // fade:true,
       autoplaySpeed: 4000,
       autoplay: false,
       lazyLoad: "progressive",
@@ -165,11 +178,17 @@ $(function () {
       speed: 600,
       arrows: true,
       dots: false,
+      draggable: false,
+      touchMove: false,
+      swipe: false,
+      swipeToSlide: false,
       cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)"
     });
   }
 
 });
+
+
 
 // Resize event
 // $(window).on("resize.slickVideoPlayer", function () {
