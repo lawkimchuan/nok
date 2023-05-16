@@ -653,7 +653,7 @@ header nav ul li a {
     /* column-count: 2; */
     align-self: flex-end;
     margin: 0;
-    padding: 0 0 0 5rem;
+    padding: 0;
   }
 
   .caption .caption-indicator {
@@ -678,9 +678,14 @@ header nav ul li a {
     backface-visibility: hidden;
   }
   .slick-slide::before {
-    background-color: #000;
-    opacity: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 40%
+    );
+    opacity: 1;
     z-index: 1;
+    bottom: 0;
   }
 
   .about .office {
