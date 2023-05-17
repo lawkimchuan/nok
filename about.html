@@ -103,35 +103,43 @@
 
 				<div class="row office">
 					<div class="col">
-						<div class="img-holder">
-							<video autoplay muted loop>
+						<!-- <video autoplay muted loop>
 								<source src="video/07_Singapore_Office_Video.mp4" type="video/mp4">
-							</video>
-							<p>
-								NOK Singapore<br />
-								130 Hong Kong Street<br />
-								Singapore 059656
-							</p>
-							<p>+65 6536 1286<br />
-								<a class="about-link" href="mailto:studio@nok.design">studio@nok.design</a>
-							</p>
+							</video> -->
+						<div class="video-holder">
+							<iframe
+								src="https://player.vimeo.com/video/827635722?h=6f50e13529?api=1&background=1&mute=0&loop=1"
+								width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen"
+								allowfullscreen></iframe>
 						</div>
+						<p>
+							NOK Singapore<br />
+							130 Hong Kong Street<br />
+							Singapore 059656
+						</p>
+						<p>+65 6536 1286<br />
+							<a class="about-link" href="mailto:studio@nok.design">studio@nok.design</a>
+						</p>
 					</div>
 					<div class="col">
-						<div class="img-holder">
-							<video autoplay muted loop>
+						<!-- <video autoplay muted loop>
 								<source src="video/08_Taiwan_Office_Video.mp4" type="video/mp4">
-							</video>
-							<p>
-								NOK Taipei<br />
-								Level 7-8, No.2, Sec.3<br />
-								Minsheng E.Rd., Zhongshan Dist.,<br />
-								Taipei City 10480
-							</p>
-							<p>+886 900008916<br />
-								<a class="about-link" href="mailto:studio@nok.design">studio@nok.design</a>
-							</p>
+							</video> -->
+						<div class="video-holder">
+							<iframe
+								src="https://player.vimeo.com/video/827635770?h=9b940b6211?api=1&background=1&mute=0&loop=1"
+								width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen"
+								allowfullscreen></iframe>
 						</div>
+						<p>
+							NOK Taipei<br />
+							Level 7-8, No.2, Sec.3<br />
+							Minsheng E.Rd., Zhongshan Dist.,<br />
+							Taipei City 10480
+						</p>
+						<p>+886 900008916<br />
+							<a class="about-link" href="mailto:studio@nok.design">studio@nok.design</a>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -173,15 +181,26 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script> -->
 	<!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
 	<!-- <script src="./script.js"></script> -->
-	<script>
-		//AOS.init(
-			//duration: 100, // values from 0 to 3000, with step 50ms
-		//);
-	</script>
+
 
 	<!-- <script type="text/javascript">
 			window.onload = animation2;
 		</script> -->
+
+	<script src="https://player.vimeo.com/api/player.js"></script>
+	<script>
+		const iframe = document.querySelector('iframe');
+		const player = new Vimeo.Player(iframe);
+
+		player.on('play', function (data) {
+			console.log('played the video!');
+			console.log(data.duration);
+		});
+
+		player.getVideoTitle().then(function (title) {
+			console.log('title:', title);
+		});
+	</script>
 </body>
 
 </html>

@@ -541,10 +541,6 @@ header nav ul li a {
   margin-bottom: 1.4rem;
 }
 
-.about .office {
-  margin-top: 4rem;
-}
-
 .about {
   font-family: var(--spacegrostesk);
   padding-top: 4rem;
@@ -577,6 +573,29 @@ header nav ul li a {
 
 .about-link:hover {
   text-decoration: underline;
+}
+
+.office .col {
+  margin-bottom: 3rem;
+}
+
+.about .office {
+  margin-top: 4rem;
+}
+
+.about .office .video-holder {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  margin-bottom: 0.4rem;
+}
+
+.about .office .video-holder iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .social {
