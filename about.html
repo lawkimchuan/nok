@@ -182,24 +182,23 @@
 	<!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
 	<!-- <script src="./script.js"></script> -->
 
-
-	<!-- <script type="text/javascript">
-			window.onload = animation2;
-		</script> -->
-
 	<script src="https://player.vimeo.com/api/player.js"></script>
 	<script>
-		const iframe = document.querySelector('iframe');
-		const player = new Vimeo.Player(iframe);
+		const iframes = document.getElementsByTagName("iframe")
+		for (let i = 0; i < iframes.length; i++) {
+			//console.log(iframes[i]);
+			const current_iframe = iframes[i];
+			const player = new Vimeo.Player(current_iframe);
 
-		player.on('play', function (data) {
-			console.log('played the video!');
-			console.log(data.duration);
-		});
+			player.getVideoTitle().then(function (title) {
+				console.log('title:', title);
+			});
+			player.on('play', function (data) {
+				console.log('played the video!');
+				console.log(data.duration);
+			});
+		}
 
-		player.getVideoTitle().then(function (title) {
-			console.log('title:', title);
-		});
 	</script>
 </body>
 
