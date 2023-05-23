@@ -9,6 +9,7 @@
 :root {
   --intorange: #ff4f00;
   --silvergrey: #c0c0c0;
+  --lightgrey: #d7d7d7;
   --wildsand: #f5f5f5;
 
   --sourcesan: "Source Sans Pro", sans-serif;
@@ -30,7 +31,7 @@
 
 body {
   font-family: var(--sourcesan);
-  background-color: var(--silvergrey);
+  background-color: var(--lightgrey);
   position: relative;
   color: var(--wildsand);
   text-align: left;
@@ -55,7 +56,11 @@ video {
 }
 
 .no-padding {
-  padding: 0;
+  padding: 0 !important;
+}
+
+.pad-b0 {
+  padding-bottom: 0 !important;
 }
 
 .bold {
@@ -91,10 +96,10 @@ video {
   height: 100px;
   transform: scaleX(0) scaleY(0);
   transform-origin: center center;
-  background: var(--silvergrey);
+  background: var(--lightgrey);
 }
 .loader__element:first-of-type {
-  background: var(--silvergrey);
+  background: var(--lightgrey);
 }
 
 .landing {
@@ -163,7 +168,7 @@ header {
   left: 0;
   width: 100%;
   height: 60px;
-  padding: 0 5%;
+  padding: 0 20px;
   text-align: left;
   z-index: 999;
   display: flex;
@@ -316,50 +321,39 @@ header nav ul li a {
   top: 50%; */
   width: 100%;
   text-align: left;
-  padding: 1.2rem;
+  padding: 20px;
   color: white;
   margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.2rem;
   opacity: 1;
   z-index: 2;
   letter-spacing: 0.02em;
   transition: all 0.3s ease;
 }
 
-.caption h1 {
-  margin: 1rem 0;
-  font-size: 1.4rem;
-}
-
 .caption-head img {
-  width: 120px;
-}
-
-.caption-1 img {
   width: 200px;
 }
 
-.caption-info {
-  padding: 0 0 2rem 0;
+.caption-logo-xl img {
+  width: 260px;
 }
 
-.caption-info h2 {
-  font-size: 1.4rem;
+.caption-info h1 {
+  font-size: 19px;
   margin: 0.6rem 0;
 }
 
 .caption-info {
   text-align: justify;
+  padding: 0 0 2rem 0;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .caption-pagination {
   position: relative;
   margin: 1em 0;
-}
-
-.caption .caption-indicator i {
-  font-size: 0.6em;
+  width: 100%;
 }
 
 .caption .go-prev {
@@ -367,8 +361,14 @@ header nav ul li a {
   position: absolute;
   z-index: 999;
   bottom: 0;
-  left: 0;
-  width: 32px;
+  right: 30px;
+  transition: color 0.4s;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.caption .go-prev:hover {
+  color: var(--intorange);
 }
 
 .caption .go-next {
@@ -376,8 +376,14 @@ header nav ul li a {
   position: absolute;
   z-index: 999;
   bottom: 0;
-  left: 30px;
-  width: 40px;
+  right: 0px;
+  transition: color 0.4s;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.caption .go-next:hover {
+  color: var(--intorange);
 }
 
 .slick-prev {
@@ -526,10 +532,10 @@ header nav ul li a {
 /* ---------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------- */
 .container {
-  max-width: 1140px;
+  max-width: 1440px;
   margin: 0 auto;
   color: #000;
-  background-color: var(--silvergrey);
+  background-color: var(--lightgrey);
   padding: 1rem;
 }
 
@@ -538,7 +544,7 @@ header nav ul li a {
 }
 
 .container .row {
-  margin-bottom: 1.4rem;
+  margin-bottom: 0.4rem;
 }
 
 .about {
@@ -549,7 +555,7 @@ header nav ul li a {
 }
 
 .about p {
-  font-size: 1em;
+  font-size: 1.2rem;
 }
 
 .about h2 {
@@ -576,7 +582,15 @@ header nav ul li a {
 }
 
 .office .col {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+}
+
+.profile .img-holder {
+  width: 100%;
+}
+
+.profile .img-holder .img-slide {
+  width: 100%;
 }
 
 .about .office {
@@ -602,7 +616,7 @@ header nav ul li a {
   display: flex;
   text-align: center;
   margin: 30px auto;
-  max-width: 160px;
+  max-width: 240px;
 }
 
 .social .col {
@@ -637,19 +651,16 @@ header nav ul li a {
   }
 
   .landing .quote p {
-    font-size: 5rem;
+    font-size: 6rem;
     line-height: 6rem;
   }
 
   .caption {
     position: absolute;
-    left: 5%;
+    left: 0;
     top: auto;
     bottom: 5%;
-    width: 90vw;
-    font-size: 0.9rem;
-    line-height: 1.2rem;
-    letter-spacing: 0.02em;
+    width: 100vw;
     color: #fff;
     margin: 0;
     display: flex;
@@ -665,19 +676,24 @@ header nav ul li a {
   .caption .caption-content {
     display: flex;
     flex: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 10px 15px 15px;
   }
 
   .caption .caption-info {
-    flex: 1;
-    /* column-count: 2; */
+    flex: 6;
     align-self: flex-end;
     margin: 0;
     padding: 0;
   }
 
+  .caption .caption-info .info {
+    width: 95%;
+  }
+
   .caption .caption-indicator {
+    flex: 1;
     align-self: flex-end;
-    padding: 0 0 0 3rem;
   }
 
   /* .slick-dots {
@@ -713,11 +729,11 @@ header nav ul li a {
 
   .about .profile .col:first-child,
   .about .services .col:first-child {
-    padding-right: 6vw;
+    padding-right: 4vw;
   }
 
-  .about .profile .col:last-child,
+  /* .about .profile .col:last-child,
   .about .services .col:last-child {
-    padding-left: 6vw;
-  }
+    
+  } */
 }

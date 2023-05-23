@@ -1,5 +1,6 @@
 var slideWrapper = $(".main-slider"),
 	iframes = slideWrapper.find(".embed-player");
+
 // lazyImages = slideWrapper.find('.slide-image'),
 // lazyCounter = 0;
 
