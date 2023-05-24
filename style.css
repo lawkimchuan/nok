@@ -356,6 +356,7 @@ header nav ul li a {
   /* margin: 1em 0; */
   width: 100%;
   bottom: 0;
+  z-index: 999;
   text-align: right;
 }
 
