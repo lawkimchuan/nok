@@ -190,7 +190,7 @@ $(function () {
 			resizePlayer(iframes, 1 / 1);
 			//set the source of vimeo to mobile version
 			document.getElementById("slide1").src =
-				"https://player.vimeo.com/video/822509710?autoplay=0&muted=1&controls=0&autopause=0";
+				"https://player.vimeo.com/video/829706398?autoplay=0&muted=1&controls=0&autopause=0";
 			document.getElementById("slide2").src =
 				"https://player.vimeo.com/video/822509710?autoplay=0&muted=1&controls=0&autopause=0";
 			document.getElementById("slide3").src =
