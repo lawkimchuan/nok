@@ -63,20 +63,6 @@ video {
   padding-bottom: 0 !important;
 }
 
-.bold {
-  font-weight: 900;
-}
-
-.mar-b20 {
-  margin-bottom: 20px;
-}
-.mar-b30 {
-  margin-bottom: 30px;
-}
-.mar-b60 {
-  margin-bottom: 60px;
-}
-
 .black-bg {
   background-color: #000;
 }
@@ -199,8 +185,8 @@ header nav ul li {
 }
 header nav ul li a {
   display: block;
-  color: var(--wildsand);
-  font-weight: bold;
+  /* color: var(--wildsand);
+  font-weight: bold; */
   width: 40px;
 }
 /* header nav ul li a svg {
@@ -315,7 +301,7 @@ header nav ul li a {
 /* ---------------------------------------------------------------------- */
 
 .caption {
-  font-family: var(--spacegrostesk);
+  font-family: var(--sourcesan);
   /* position: absolute;
   left: 0;
   top: 50%; */
@@ -342,6 +328,7 @@ header nav ul li a {
 }
 
 .caption-info h1 {
+  font-family: var(--spacegrostesk);
   text-align: left;
   font-size: 19px;
   margin: 0.6rem 0;
@@ -349,6 +336,7 @@ header nav ul li a {
 
 .caption-indicator {
   position: relative;
+  font-family: var(--spacegrostesk);
 }
 
 .caption-pagination {
@@ -362,7 +350,7 @@ header nav ul li a {
 
 .caption .go-prev {
   display: inline-block;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: bold;
   padding: 5px 0 5px 5px;
   margin: 0;
@@ -374,15 +362,14 @@ header nav ul li a {
 
 .caption .go-divider {
   display: inline-block;
-  font-size: 11px;
-  font-weight: bold;
+  font-size: 12px;
   padding: 0;
   margin: 0;
 }
 
 .caption .go-next {
   display: inline-block;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: bold;
   padding: 5px 5px 5px 0;
   margin: 0;
@@ -561,7 +548,7 @@ header nav ul li a {
 }
 
 .about p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .about h2 {
