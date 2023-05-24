@@ -347,36 +347,44 @@ header nav ul li a {
   margin: 0.6rem 0;
 }
 
-.caption-pagination {
+.caption-indicator {
   position: relative;
-  margin: 1em 0;
+}
+
+.caption-pagination {
+  position: absolute;
+  /* margin: 1em 0; */
   width: 100%;
+  bottom: 0;
+  text-align: right;
 }
 
 .caption .go-prev {
-  display: inline;
-  position: absolute;
-  z-index: 999;
-  bottom: 0;
-  right: 30px;
-  transition: color 0.4s;
+  display: inline-block;
   font-size: 11px;
   font-weight: bold;
+  padding: 5px 0 5px 5px;
+  margin: 0;
 }
 
 .caption .go-prev:hover {
   color: var(--intorange);
 }
 
-.caption .go-next {
-  display: inline;
-  position: absolute;
-  z-index: 999;
-  bottom: 0;
-  right: 0px;
-  transition: color 0.4s;
+.caption .go-divider {
+  display: inline-block;
   font-size: 11px;
   font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.caption .go-next {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 5px 5px 5px 0;
+  margin: 0;
 }
 
 .caption .go-next:hover {
