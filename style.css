@@ -115,7 +115,7 @@ video {
   line-height: 12vw;
 }
 
-.landing #bubble {
+.landing .bubble {
   object-fit: cover;
   position: absolute;
   z-index: 2;
