@@ -352,7 +352,7 @@ header nav ul li a {
 
 .caption .go-prev {
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 16px;
   font-weight: bold;
   padding: 5px 0 5px 10px;
@@ -363,12 +363,12 @@ header nav ul li a {
 
 .caption .go-prev:hover {
   color: var(--intorange);
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .caption .go-divider {
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 16px;
   padding: 0;
   margin: 0;
@@ -377,7 +377,7 @@ header nav ul li a {
 
 .caption .go-next {
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 16px;
   padding: 5px 10px 5px 0;
   margin: 0;
@@ -387,7 +387,7 @@ header nav ul li a {
 
 .caption .go-next:hover {
   color: var(--intorange);
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .slick-prev {

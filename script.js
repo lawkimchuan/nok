@@ -172,10 +172,7 @@ function resizePlayer(iframes, ratio) {
 // DOM Ready
 $(function () {
 	// Initialize
-	let width = screen.width;
-	if (width < 688) {
-		document.getElementById("bubble").src = "video/bubble-mobile.webm";
-	}
+
 
 	slideWrapper.on("init", function (slick) {
 		slick = $(slick.currentTarget);
@@ -336,12 +333,21 @@ function animCompleted() {
 	window.location.href = "about.html";
 }
 
-// document.addEventListener('click', animation);
 $("a.navlink").click(function () {
 	animation();
 });
 
-//function to hide the landing page
-function finished() {
-	myDelay = setTimeout(animation3, 3000);
+window.onload = function () {
+	if (screen.width < 688) {
+		myDelay = setTimeout(animation3, 3000);
+	} else {
+		document.getElementById('bubd').addEventListener('ended', myHandler, false);
+	}
 }
+
+function myHandler(e) {
+	console.log("desktop bubble finished");
+	animation3();
+}
+
+
