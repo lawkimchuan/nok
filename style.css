@@ -353,7 +353,7 @@ header nav ul li a {
 
 .caption-info {
   text-align: left;
-  padding: 0 0 2rem 0;
+  padding: 0 0 3rem 0;
   font-size: 12px;
   line-height: 18px;
 }
@@ -771,6 +771,10 @@ header nav ul li a {
 
   .caption .caption-info .info {
     width: 95%;
+  }
+
+  .caption-pagination {
+    position: initial;
   }
 
   .caption .caption-indicator {
