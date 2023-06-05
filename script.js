@@ -6,6 +6,10 @@ window.onload = function () {
 
 	} else {
 		document.getElementById('bubd').addEventListener('ended', myHandler, false);
+
+		$(".landing").click(function () {
+			closeLandingPage();
+		});
 	}
 }
 
@@ -14,9 +18,7 @@ function myHandler(e) {
 	closeLandingPage();
 }
 
-$("a.navlink").click(function () {
-	animation();
-});
+
 
 
 var slideWrapper = $(".main-slider"),
@@ -213,6 +215,12 @@ $(function () {
 		console.log("error with referrer url");
 		$('.landing').show();
 	}
+
+	$("a.navlink").click(function () {
+		animation();
+	});
+
+
 
 	//reset the src of the mobile bubble webp so it will restart
 	document.getElementById('bubm').style.visibility = "hidden";
