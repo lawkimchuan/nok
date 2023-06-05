@@ -22,48 +22,55 @@
 	<link rel="stylesheet" href="./style.css" />
 </head>
 
-<body class="black-bg">
+<body>
 	<div class="loader">
 		<div class="loader__element"></div>
 	</div>
+
+	<div class="loader2">
+		<div class="loader__element2"></div>
+	</div>
+
 	<div id="landing" class="landing">
+		<div class="landing-content">
+			<div class="quote">
+				<p class="mobile">
+					Using creative
+					thinking to push
+					boundaries and
+					shape the future.
+				</p>
+				<p class="desktop">
+					Using creative<br />
+					thinking to push<br />
+					boundaries and<br />
+					shape the future.
+				</p>
+			</div>
 
-		<div class="quote">
-			<p class="mobile">
-				Using creative
-				thinking to push
-				boundaries and
-				shape the future.
-			</p>
-			<p class="desktop">
-				Using creative<br />
-				thinking to push<br />
-				boundaries and<br />
-				shape the future.
-			</p>
-		</div>
+			<div id="bubble" class="bubble">
+				<picture class="mobile">
+					<img id="bubm" src="video/bub-m-2.webp" alt="Bubbles!" />
+				</picture>
 
-		<div id="bubble" class="bubble">
-			<picture class="mobile">
-				<img id="bubm" src="video/bub-m.webp" alt="Bubbles!" />
-			</picture>
+				<video id="bubd" class="bubble desktop" width="100%" autoplay muted>
+					<source src="video/bubble-anim.webm" type="video/webm" />
+				</video>
 
-			<video id="bubd" class="bubble desktop" width="100%" autoplay muted>
-				<source src="video/bubble-anim.webm" type="video/webm" />
-			</video>
-
-			<!-- <video class="mobile" autoplay muted>
+				<!-- <video class="mobile" autoplay muted>
 					<source src="video/bubble-mobile.webm" type="video/webm" />
 					<source src="video/bubble-mobile.mp4" type="video/mp4" />
 				</video> -->
+			</div>
 		</div>
-
 
 	</div>
 
 	<header>
 		<div class="logo">
-			<img src="img/nok-asset/nok_logo.png" alt="NOK Logo" />
+			<a href="javascript:location.reload();">
+				<img src="img/nok-asset/nok_logo.png" alt="NOK Logo" />
+			</a>
 		</div>
 		<nav>
 			<ul>
@@ -95,7 +102,11 @@
 				height="100%" frameborder="0" allow="fullscreen" allowfullscreen></iframe>
 			<div class="caption">
 				<div class="caption-head caption-logo-xl">
-					<img src="img/client-logo/01_Alienware_Logo.png" alt="Alienware Logo" />
+					<picture>
+						<source media="(min-width:688px)" srcset="img/client-logo/01_Alienware_Logo.png">
+						<img src="img/client-logo/01_Alienware_Logo_Black.png" alt="Alienware Logo" />
+					</picture>
+
 				</div>
 				<div class="caption-content">
 					<div class="caption-info">
@@ -138,7 +149,10 @@
 				height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 			<div class="caption">
 				<div class="caption-head">
-					<img src="img/client-logo/02_Homm_Logo.png" alt="Homm Logo" />
+					<picture>
+						<source media="(min-width:688px)" srcset="img/client-logo/02_Homm_Logo.png">
+						<img src="img/client-logo/02_Homm_Logo_Black.png" alt="Homm Logo" />
+					</picture>
 				</div>
 				<div class="caption-content">
 					<div class="caption-info">
@@ -183,7 +197,12 @@
 				height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 			<div class="caption">
 				<div class="caption-head">
-					<img src="img/client-logo/03_Harmony_Spheres_Logo.png" alt="National Heritage Board Logo" />
+					<picture>
+						<source media="(min-width:688px)" srcset="img/client-logo/03_Harmony_Spheres_Logo.png">
+						<img src="img/client-logo/03_Harmony_Spheres_Logo_Black.png"
+							alt="National Heritage Board Logo" />
+					</picture>
+
 				</div>
 				<div class="caption-content">
 					<div class="caption-info">
@@ -228,7 +247,10 @@
 				height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 			<div class="caption">
 				<div class="caption-head">
-					<img src="img/client-logo/04_SFA_Logo.png" alt="SFA Logo" />
+					<picture>
+						<source media="(min-width:688px)" srcset="img/client-logo/04_SFA_Logo.png">
+						<img src="img/client-logo/04_SFA_Logo_Black.png" alt="Singapore Food Agency Logo" />
+					</picture>
 				</div>
 				<div class="caption-content">
 					<div class="caption-info">
@@ -272,7 +294,10 @@
 				height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 			<div class="caption">
 				<div class="caption-head">
-					<img src="img/client-logo/05_Hegen_Logo.png" alt="Hegen Logo" />
+					<picture>
+						<source media="(min-width:688px)" srcset="img/client-logo/05_Hegen_Logo.png">
+						<img src="img/client-logo/05_Hegen_Logo_Black.png" alt="Hegen Logo" />
+					</picture>
 				</div>
 				<div class="caption-content">
 					<div class="caption-info">
@@ -316,7 +341,11 @@
 				height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 			<div class="caption">
 				<div class="caption-head">
-					<img src="img/client-logo/06_Jack_Jill_Logo.png" alt="Jack & Jill Logo" />
+					<picture>
+						<source media="(min-width:688px)" srcset="img/client-logo/06_Jack_Jill_Logo.png">
+						<img src="img/client-logo/06_Jack_Jill_Logo_Black.png" alt="Jack & Jill Logo" />
+					</picture>
+
 				</div>
 				<div class="caption-content">
 					<div class="caption-info">
@@ -361,7 +390,10 @@
 				height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 			<div class="caption">
 				<div class="caption-head">
-					<img src="img/client-logo/07_Steward_Logo.png" alt="Steward Logo" />
+					<picture>
+						<source media="(min-width:688px)" srcset="img/client-logo/07_Steward_Logo.png">
+						<img src="img/client-logo/07_Steward_Logo_Black.png" alt="Steward Logo" />
+					</picture>
 				</div>
 				<div class="caption-content">
 					<div class="caption-info">

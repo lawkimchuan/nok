@@ -173,6 +173,30 @@ function resizePlayer(iframes, ratio) {
 $(function () {
 	// Initialize
 
+	//check if coming from about page
+	//if yes, check if referrer is valid (click on icon) or invalid (click on nok logo)
+	try {
+		let prevURL = document.referrer;
+		const url = new URL(prevURL);
+
+		if (url.pathname == "/about.html") {
+			console.log("Prevous page: " + url.pathname);
+			console.log("click on squircle, no landing page shown");
+			$('.landing').hide();
+			//animation2();
+		} else {
+			$('.landing').show();
+		}
+	} catch (err) {
+		console.log("click on nok logo");
+		$('.landing').show();
+	}
+
+	//reset the src of the mobile bubble webp so it will restart
+	document.getElementById('bubm').style.visibility = "hidden";
+	document.getElementById('bubm').src = "";
+	document.getElementById('bubm').style.visibility = "visible";
+	document.getElementById('bubm').src = "video/bub-m.webp";
 
 	slideWrapper.on("init", function (slick) {
 		slick = $(slick.currentTarget);
@@ -226,16 +250,6 @@ $(function () {
 		slideWrapper.slick("slickNext");
 	});
 
-	/*
-  slideWrapper.on("lazyLoaded", function (event, slick, image, imageSource) {
-	lazyCounter++;
-	if (lazyCounter === lazyImages.length) {
-	  lazyImages.addClass('show');
-	  slideWrapper.slick("slickPlay");
-	}
-  });
-  */
-
 	if ($.fn.slick) {
 		// check if slick exist
 		//start the slider
@@ -249,8 +263,8 @@ $(function () {
 			dots: false,
 			draggable: false,
 			touchMove: false,
-			swipe: false,
-			swipeToSlide: false,
+			swipe: true,
+			swipeToSlide: true,
 			accessibility: false,
 			cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)",
 		});
@@ -271,35 +285,35 @@ tl.set(".loader", {
 		transformOrigin: "center center",
 		borderRadius: "100%",
 	})
+	.to(".loader__element", 1.2, {
+		scaleX: 50,
+		scaleY: 50,
+		translateX: -500,
+		translateY: 500,
+		ease: "expo.InOut",
+	});
+
+
+var t2 = gsap.timeline({ onComplete: animCompleted2 });
+t2.pause();
+t2.set(".loader", {
+	display: "block",
+	backgroundColor: 'black',
+})
+	.set(".loader__element", {
+		transformOrigin: "center center",
+		borderRadius: "100%",
+	})
 	.to(".loader__element", 1, {
 		scaleX: 50,
 		scaleY: 50,
 		translateX: -500,
 		translateY: 500,
 		ease: "expo.In",
+	}).set(".loader", {
+		display: "none",
 	});
 
-/*
-var t2 = gsap.timeline();
-t2.pause();
-t2.set('.loader2', {
-  display: 'block'
-}).set('.loader__element2', {
-  transformOrigin: 'center right',
-}).to('.loader__element2', 1, {
-  scaleX: 1,
-  ease: 'expo.inOut',
-  stagger: 0.1,
-}).set('.loader__element2', {
-  transformOrigin: 'center left',
-}).to('.loader__element2', 1, {
-  scaleX: 0,
-  ease: 'expo.inOut',
-  stagger: -0.1,
-}).set('.loader2', {
-  display: 'none',
-});
-*/
 
 var t3 = gsap.timeline();
 if ($(".landing")[0]) {
@@ -317,15 +331,12 @@ function animation() {
 	tl.play(0);
 }
 
-/*
 function animation2() {
-  t2.seek(1.0);
-  t2.play();
+	t2.reverse(0);
 }
-*/
 
 //exit animation of landing page
-function animation3() {
+function closeLandingPage() {
 	t3.play(0);
 }
 
@@ -333,21 +344,27 @@ function animCompleted() {
 	window.location.href = "about.html";
 }
 
+function animCompleted2() {
+	//window.location.href = "index.html";
+}
+
 $("a.navlink").click(function () {
 	animation();
 });
 
 window.onload = function () {
+
 	if (screen.width < 688) {
-		myDelay = setTimeout(animation3, 3000);
+		myDelay = setTimeout(closeLandingPage, 3000);
+
 	} else {
 		document.getElementById('bubd').addEventListener('ended', myHandler, false);
 	}
 }
 
 function myHandler(e) {
-	console.log("desktop bubble finished");
-	animation3();
+	console.log("desktop bubble anim done");
+	closeLandingPage();
 }
 
 

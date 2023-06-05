@@ -84,19 +84,41 @@ video {
   transform-origin: center center;
   background: var(--lightgrey);
 }
-.loader__element:first-of-type {
-  background: var(--lightgrey);
+
+.loader2 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 100;
+}
+.loader__element2 {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 100px;
+  height: 100px;
+  transform: scaleX(0) scaleY(0);
+  transform-origin: center center;
+  background: red;
 }
 
 .landing {
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--silvergrey);
-  color: black;
+  display: none;
+  position: fixed;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 3;
+  width: 100vw;
+  height: 100vh;
+}
+
+.landing-content {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--silvergrey);
+  color: black;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -104,8 +126,7 @@ video {
 }
 
 .landing .quote {
-  position: absolute;
-  left: 30px;
+  margin-left: 30px;
 }
 
 .landing .quote p {
@@ -304,26 +325,34 @@ header nav ul li a {
 
 .caption {
   font-family: var(--sourcesan);
-  /* position: absolute;
-  left: 0;
-  top: 50%; */
+  position: relative;
   width: 100%;
   text-align: left;
-  padding: 0 30px;
-  color: white;
+  color: black;
   margin: 0;
   opacity: 1;
   z-index: 2;
   letter-spacing: 0.02em;
   transition: all 0.3s ease;
+  padding: 0 20px;
+}
+
+.caption-head {
+  display: flex;
+  align-items: flex-end;
+  min-height: 90px;
 }
 
 .caption-head img {
   width: 200px;
 }
 
+.caption-logo-xl img {
+  width: 240px;
+}
+
 .caption-info {
-  text-align: justify;
+  text-align: left;
   padding: 0 0 2rem 0;
   font-size: 12px;
   line-height: 18px;
@@ -332,25 +361,25 @@ header nav ul li a {
 .caption-info h1 {
   font-family: var(--spacegrostesk);
   text-align: left;
-  font-size: 19px;
+  font-size: 18px;
   margin: 0.6rem 0;
 }
 
 .caption-indicator {
-  position: relative;
   font-family: var(--spacegrostesk);
 }
 
 .caption-pagination {
   position: absolute;
-  /* margin: 1em 0; */
   width: 100%;
   bottom: 0;
+  right: 20px;
   z-index: 999;
   text-align: right;
 }
 
 .caption .go-prev {
+  color: black;
   display: inline-block;
   font-size: 12px;
   line-height: 16px;
@@ -376,6 +405,7 @@ header nav ul li a {
 }
 
 .caption .go-next {
+  color: black;
   display: inline-block;
   font-size: 12px;
   line-height: 16px;
@@ -540,7 +570,7 @@ header nav ul li a {
   margin: 0 auto;
   color: #000;
   background-color: var(--lightgrey);
-  padding: 1rem;
+  padding: 1rem 30px 1rem 30px;
 }
 
 .container p {
@@ -571,8 +601,8 @@ header nav ul li a {
 }
 
 .about h2 {
-  font-size: 3rem;
-  line-height: 3.6rem;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
   font-family: var(--spacegrostesk);
   font-weight: 600;
   color: var(--intorange);
@@ -608,6 +638,10 @@ header nav ul li a {
 
 .about .office {
   margin-top: 4rem;
+}
+
+.about .office .col {
+  margin-bottom: 3rem;
 }
 
 .about .office .video-holder {
@@ -652,6 +686,14 @@ header nav ul li a {
 
   header {
     padding: 0 60px;
+  }
+
+  .landing .quote {
+    margin-left: 60px;
+  }
+
+  .container {
+    padding: 1rem 60px 1rem 60px;
   }
 
   .container .row {
@@ -713,7 +755,7 @@ header nav ul li a {
   .caption .caption-content {
     display: flex;
     flex: 1;
-    padding: 10px 10px 15px 50px;
+    padding: 10px 10px 5px 50px;
   }
 
   .caption .caption-info {
@@ -723,6 +765,10 @@ header nav ul li a {
     padding: 0;
   }
 
+  .caption .caption-info h1 {
+    font-size: 19px;
+  }
+
   .caption .caption-info .info {
     width: 95%;
   }
@@ -730,6 +776,14 @@ header nav ul li a {
   .caption .caption-indicator {
     flex: 1;
     align-self: flex-end;
+  }
+
+  .caption .go-prev {
+    color: white;
+  }
+
+  .caption .go-next {
+    color: white;
   }
 
   /* .slick-dots {
@@ -759,12 +813,16 @@ header nav ul li a {
     bottom: 0;
   }
 
+  .about h2 {
+    font-size: 3rem;
+    line-height: 3.6rem;
+  }
+
   .about .office {
     margin-top: 6rem;
   }
 
-  .about .profile .col:first-child,
-  .about .services .col:first-child {
-    padding-right: 4vw;
+  .about .address {
+    min-height: 100px;
   }
 }
