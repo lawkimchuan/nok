@@ -1,3 +1,24 @@
+
+window.onload = function () {
+
+	if (screen.width < 688) {
+		myDelay = setTimeout(closeLandingPage, 3000);
+
+	} else {
+		document.getElementById('bubd').addEventListener('ended', myHandler, false);
+	}
+}
+
+function myHandler(e) {
+	console.log("desktop bubble anim done");
+	closeLandingPage();
+}
+
+$("a.navlink").click(function () {
+	animation();
+});
+
+
 var slideWrapper = $(".main-slider"),
 	iframes = slideWrapper.find(".embed-player");
 
@@ -178,17 +199,18 @@ $(function () {
 	try {
 		let prevURL = document.referrer;
 		const url = new URL(prevURL);
+		console.log("Prevous page: " + url.pathname);
 
-		if (url.pathname == "/about.html") {
-			console.log("Prevous page: " + url.pathname);
-			console.log("click on squircle, no landing page shown");
+		if (url.pathname.indexOf("about.html") > -1) {
+			console.log("came from about page, no landing page shown");
 			$('.landing').hide();
 			//animation2();
 		} else {
+			console.log("not coming from about page");
 			$('.landing').show();
 		}
 	} catch (err) {
-		console.log("click on nok logo");
+		console.log("error with referrer url");
 		$('.landing').show();
 	}
 
@@ -348,23 +370,6 @@ function animCompleted2() {
 	//window.location.href = "index.html";
 }
 
-$("a.navlink").click(function () {
-	animation();
-});
 
-window.onload = function () {
-
-	if (screen.width < 688) {
-		myDelay = setTimeout(closeLandingPage, 3000);
-
-	} else {
-		document.getElementById('bubd').addEventListener('ended', myHandler, false);
-	}
-}
-
-function myHandler(e) {
-	console.log("desktop bubble anim done");
-	closeLandingPage();
-}
 
 
