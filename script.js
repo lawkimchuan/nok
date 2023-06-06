@@ -1,26 +1,4 @@
 
-window.onload = function () {
-
-	if (screen.width < 688) {
-		myDelay = setTimeout(closeLandingPage, 3000);
-
-	} else {
-		document.getElementById('bubd').addEventListener('ended', myHandler, false);
-
-		$(".landing").click(function () {
-			closeLandingPage();
-		});
-	}
-}
-
-function myHandler(e) {
-	console.log("desktop bubble anim done");
-	closeLandingPage();
-}
-
-
-
-
 var slideWrapper = $(".main-slider"),
 	iframes = slideWrapper.find(".embed-player");
 
@@ -220,13 +198,25 @@ $(function () {
 		animation();
 	});
 
-
-
 	//reset the src of the mobile bubble webp so it will restart
 	document.getElementById('bubm').style.visibility = "hidden";
 	document.getElementById('bubm').src = "";
 	document.getElementById('bubm').style.visibility = "visible";
 	document.getElementById('bubm').src = "video/bub-m.webp";
+
+	window.onload = function () {
+
+		if (screen.width < 688) {
+			myDelay = setTimeout(closeLandingPage, 3000);
+
+		} else {
+			document.getElementById('bubd').addEventListener('ended', myHandler, false);
+
+			$(".landing").click(function () {
+				closeLandingPage();
+			});
+		}
+	}
 
 	slideWrapper.on("init", function (slick) {
 		slick = $(slick.currentTarget);
@@ -376,6 +366,11 @@ function animCompleted() {
 
 function animCompleted2() {
 	//window.location.href = "index.html";
+}
+
+function myHandler(e) {
+	console.log("desktop bubble anim done");
+	closeLandingPage();
 }
 
 
