@@ -170,6 +170,33 @@ function resizePlayer(iframes, ratio) {
 	});
 }
 
+//exit animation of main page
+function animation() {
+	tl.play(0);
+}
+
+function animation2() {
+	t2.reverse(0);
+}
+
+//exit animation of landing page
+function closeLandingPage() {
+	t3.play(0);
+}
+
+function animCompleted() {
+	window.location.href = "about.html";
+}
+
+function animCompleted2() {
+	//window.location.href = "index.html";
+}
+
+function myHandler(e) {
+	console.log("desktop bubble anim done");
+	closeLandingPage();
+}
+
 // DOM Ready
 $(function () {
 	// Initialize
@@ -200,13 +227,14 @@ $(function () {
 
 	//reset the src of the mobile bubble webp so it will restart
 	document.getElementById('bubm').style.visibility = "hidden";
-	document.getElementById('bubm').src = "";
-	document.getElementById('bubm').style.visibility = "visible";
+	document.getElementById('bubm').src = " ";
 	document.getElementById('bubm').src = "video/bub-m.webp";
+	document.getElementById('bubm').style.visibility = "visible";
 
 	window.onload = function () {
 
 		if (screen.width < 688) {
+
 			myDelay = setTimeout(closeLandingPage, 3000);
 
 		} else {
@@ -291,11 +319,6 @@ $(function () {
 	}
 });
 
-// Resize event
-// $(window).on("resize.slickVideoPlayer", function () {
-//   resizePlayer(iframes, 16 / 9);
-// });
-
 var tl = gsap.timeline({ onComplete: animCompleted });
 tl.pause();
 tl.set(".loader", {
@@ -345,34 +368,3 @@ if ($(".landing")[0]) {
 		display: "none",
 	});
 }
-
-//exit animation of main page
-function animation() {
-	tl.play(0);
-}
-
-function animation2() {
-	t2.reverse(0);
-}
-
-//exit animation of landing page
-function closeLandingPage() {
-	t3.play(0);
-}
-
-function animCompleted() {
-	window.location.href = "about.html";
-}
-
-function animCompleted2() {
-	//window.location.href = "index.html";
-}
-
-function myHandler(e) {
-	console.log("desktop bubble anim done");
-	closeLandingPage();
-}
-
-
-
-
