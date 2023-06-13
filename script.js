@@ -2,48 +2,18 @@
 var slideWrapper = $(".main-slider"),
 	iframes = slideWrapper.find(".embed-player");
 
-// lazyImages = slideWrapper.find('.slide-image'),
-// lazyCounter = 0;
-
-// POST commands to YouTube or Vimeo API
-/*
-function postMessageToPlayer(player, command) {
-	if (player == null || command == null) return;
-	player.contentWindow.postMessage(JSON.stringify(command), "*");
-}
-*/
-
 // When the slide is changing
 function playPauseVideo(slick, control) {
 	var currentSlide, slideType, startTime, player, video;
 	var play_count = 0;
 
 	currentSlide = slick.find(".slick-current");
-	//slideType = currentSlide.attr("class").split(" ")[1];
-	//player = currentSlide.find("iframe").get(0);
-	//startTime = currentSlide.data("video-start");
 	var current_iframe = currentSlide.find("iframe").get(0);
 	var player = [];
 	player = new Vimeo.Player(current_iframe);
 
-	//if (slideType === "vimeo") {
 	switch (control) {
 		case "play":
-			/*
-			if ((startTime != null && startTime > 0) && !currentSlide.hasClass('started')) {
-				currentSlide.addClass('started');
-				postMessageToPlayer(player, {
-				"method": "setCurrentTime",
-				"value": startTime
-				});
-			}
-			*/
-			/*
-			postMessageToPlayer(player, {
-				method: "play",
-				value: 1,
-			});
-			*/
 			player.setCurrentTime(0);
 			player.play();
 
@@ -69,10 +39,6 @@ function playPauseVideo(slick, control) {
 
 				if (play_count > 1) {
 					player.pause();
-
-					// player.unload().then(function () {
-					// 	console.log("unload video");
-					// });
 					play_count = 0;
 					slideWrapper.slick("slickNext");
 				} else {
@@ -80,46 +46,13 @@ function playPauseVideo(slick, control) {
 					player.play();
 				}
 			});
-
-			/*
-			player.on('timeupdate', function (data) {
-				//console.log('Percentage watched: ' + data.percent);
-				let currentSecond = Math.floor(data.seconds);
-				let totalSecond = Math.floor(data.duration);
-				//console.log(currentSecond + "/" + totalSecond);
-				if (currentSecond >= totalSecond - 1) {
-					//this.off('timeupdate');
-
-					console.log(count);
-				}
-			});
-			*/
-
 			break;
 		case "pause":
-			/*
-			postMessageToPlayer(player, {
-				"method": "pause",
-				"value": 1
-			});
-			*/
-
 			play_count = 0;
 			player.setCurrentTime(0);
 			player.pause();
-			//unload the video and reload it (to restart the video)
-			// var video_src = current_iframe.src;
-			// current_iframe.src = "";
-			// current_iframe.src = video_src;
-
-			// player.unload().then(function () {
-			// 	console.log("unload video");
-			// });
-
 			break;
 	}
-
-	//}
 }
 
 // Resize player
@@ -132,18 +65,12 @@ function resizePlayer(iframes, ratio) {
 		playerHeight,
 		ratio = ratio || 16 / 9;
 
-	// console.log("ratio: " + ratio);
-	// console.log("width: " + width);
-	// console.log("width/ratio: " + width / ratio);
-	// console.log("height: " + height);
-
 	clony = $(".slick-cloned");
 
 	var combined = iframes.add(clony);
 
 	combined.each(function () {
 		var current = $(this);
-		//if (width / ratio < height) {
 		let scrWidth = screen.width;
 		if (scrWidth < 688) {
 			console.log("video is portrait");
@@ -226,10 +153,10 @@ $(function () {
 	});
 
 	//reset the src of the mobile bubble webp so it will restart
-	document.getElementById('bubm').style.visibility = "hidden";
-	document.getElementById('bubm').src = " ";
-	document.getElementById('bubm').src = "video/bub-m.webp";
-	document.getElementById('bubm').style.visibility = "visible";
+	// document.getElementById('bubm').style.visibility = "hidden";
+	// document.getElementById('bubm').src = " ";
+	// document.getElementById('bubm').src = "video/bub-m-2.webp";
+	// document.getElementById('bubm').style.visibility = "visible";
 
 	window.onload = function () {
 

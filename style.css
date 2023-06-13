@@ -208,37 +208,15 @@ header nav ul li {
 }
 header nav ul li a {
   display: block;
-  /* color: var(--wildsand);
-  font-weight: bold; */
   width: 40px;
 }
-/* header nav ul li a svg {
-  width: 100%;
-  display: block;
-  fill: var(--wildsand);
-  transition: all 0.4s;
-} */
-
-/* header nav ul li a svg:hover {
-  fill: var(--intorange);
-} */
 
 /* ------------------*/
 /* NAV - ABOUT PAGE */
 /* ------------------*/
-/* .nav-about {
-  border-bottom: 2px solid black;
-} */
 .nav-about h1 {
   color: black;
 }
-/* .nav-about svg {
-  fill: var(--intorange);
-  transform: rotate(90deg);
-}
-.nav-about svg:hover {
-  fill: black;
-} */
 
 /* ------------------*/
 /* SLICK SLIDER */
@@ -298,24 +276,6 @@ header nav ul li a {
   left: 0;
   width: 100%;
 }
-/*
-.slick-slide .slide-media {
-  -webkit-animation: slideOut 0.4s cubic-bezier(0.4, 0.29, 0.01, 1);
-  animation: slideOut 0.4s cubic-bezier(0.4, 0.29, 0.01, 1);
-}
-.slick-slide.slick-active {
-  z-index: 1;
-}
-.slick-slide.slick-active .slide-media {
-  -webkit-animation: slideIn 2.4s cubic-bezier(0.4, 0.29, 0.01, 1);
-  animation: slideIn 2.4s cubic-bezier(0.4, 0.29, 0.01, 1);
-}
-.slick-slide.slick-active .caption {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.7s cubic-bezier(0.32, 0.34, 0, 1.62) 0.6s;
-}
-*/
 
 /* ---------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------- */
@@ -453,46 +413,6 @@ header nav ul li a {
   display: none !important;
 }
 
-/* .slick-dots {
-  text-align: left;
-  padding-top: 15px;
-  position: absolute;
-  width: 100vw;
-  bottom: 1%;
-  padding: 20px;
-  left: 0%;
-}
-.slick-dots li {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0 8px;
-}
-.slick-dots li button {
-  width: 10px;
-  height: 10px;
-  border: none;
-  font-size: 0;
-  cursor: pointer;
-  border-radius: 50%;
-  box-shadow: 0 0 0 0 transparent;
-  vertical-align: middle;
-  color: #fff;
-  background-color: #fff;
-  transition: all 0.3s ease;
-  opacity: 0.4;
-}
-.slick-dots li button:focus {
-  outline: none;
-}
-.slick-dots li button:hover {
-  opacity: 1;
-}
-.slick-dots li.slick-active button {
-  border-color: #2d3042;
-  box-shadow: 0 0 0 2px #fff;
-  opacity: 1;
-} */
-
 @-webkit-keyframes moveIn {
   from {
     transform: translateX(-100px);
@@ -556,13 +476,6 @@ header nav ul li a {
     /* opacity: 0; */
   }
 }
-
-/* .apng {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 999;
-} */
 
 /* ---------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------- */
@@ -793,16 +706,6 @@ header nav ul li a {
   .caption .go-next {
     color: white;
   }
-
-  /* .slick-dots {
-    text-align: left;
-    padding-top: 15px;
-    position: absolute;
-    width: 100vw;
-    bottom: 2%;
-    padding: 20px;
-    left: 5%;
-  } */
 
   .slick-slide {
     position: relative;
