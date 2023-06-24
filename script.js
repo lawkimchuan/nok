@@ -152,21 +152,14 @@ $(function () {
 		animation();
 	});
 
-	//reset the src of the mobile bubble webp so it will restart
-	// document.getElementById('bubm').style.visibility = "hidden";
-	// document.getElementById('bubm').src = " ";
-	// document.getElementById('bubm').src = "video/bub-m-2.webp";
-	// document.getElementById('bubm').style.visibility = "visible";
-
 	window.onload = function () {
 
 		if (screen.width < 688) {
-			console.log('mobile bubbles')
-
+			//console.log('mobile bubbles')
 			//myDelay = setTimeout(closeLandingPage, 3000);
 			document.getElementById('bubm').addEventListener('ended', myHandler, false);
 		} else {
-			console.log('desktop bubbles')
+			//console.log('desktop bubbles')
 			document.getElementById('bubd').addEventListener('ended', myHandler, false);
 		}
 		$(".landing").click(function () {
