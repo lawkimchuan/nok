@@ -49,11 +49,19 @@
 			</div>
 
 			<div id="bubble" class="bubble">
-				<picture class="mobile">
+				<!-- <picture class="mobile">
 					<img id="bubm" src="video/bub-m.webp" alt="Bubbles!" />
-				</picture>
+				</picture> -->
 
-				<video id="bubd" class="bubble desktop" width="100%" autoplay muted>
+				<video id="bubm" class="mobile" width="100%" autoplay muted playsinline="true"
+					disablePictureInPicture="true">
+					<source src="video/bubble-mobile-hevc.mov" type='video/mp4' />
+					<source src="video/bubble-mobile.webm" type="video/webm" />
+				</video>
+
+				<video id="bubd" class="desktop" width="100%" autoplay muted playsinline="true"
+					disablePictureInPicture="true">
+					<source src="video/bubble-hevc.mov" type='video/mp4; codecs="hvc1"' />
 					<source src="video/bubble-anim.webm" type="video/webm" />
 				</video>
 			</div>

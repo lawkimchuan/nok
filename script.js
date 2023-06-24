@@ -161,16 +161,17 @@ $(function () {
 	window.onload = function () {
 
 		if (screen.width < 688) {
+			console.log('mobile bubbles')
 
-			myDelay = setTimeout(closeLandingPage, 3000);
-
+			//myDelay = setTimeout(closeLandingPage, 3000);
+			document.getElementById('bubm').addEventListener('ended', myHandler, false);
 		} else {
+			console.log('desktop bubbles')
 			document.getElementById('bubd').addEventListener('ended', myHandler, false);
-
-			$(".landing").click(function () {
-				closeLandingPage();
-			});
 		}
+		$(".landing").click(function () {
+			closeLandingPage();
+		});
 	}
 
 	slideWrapper.on("init", function (slick) {

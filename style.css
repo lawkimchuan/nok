@@ -145,7 +145,7 @@ video {
   width: 100vw;
 }
 
-.landing .bubble img {
+.landing .bubble video {
   object-fit: cover;
   height: 100vh;
   width: 100vw;
