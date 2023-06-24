@@ -314,7 +314,6 @@ header nav ul li a {
 .caption-info {
   text-align: left;
   padding: 0 0 3rem 0;
-  font-size: 12px;
   line-height: 18px;
 }
 
@@ -323,6 +322,10 @@ header nav ul li a {
   text-align: left;
   font-size: 18px;
   margin: 0.6rem 0;
+}
+
+.caption-info .info {
+  font-size: 12px !important;
 }
 
 .caption-indicator {
@@ -338,20 +341,22 @@ header nav ul li a {
   text-align: right;
 }
 
-.caption-pagination i {
-  font-size: 10px;
-}
-
 .caption .go-prev {
   color: black;
   display: inline-block;
   font-size: 12px;
-  line-height: 16px;
   font-weight: bold;
   padding: 5px 0 5px 0;
   margin: 0;
   vertical-align: middle;
   transition: all 0.2s;
+}
+
+.caption-indicator i {
+  font-size: 14px;
+  animation-name: color;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 .caption .go-prev:hover {
@@ -362,7 +367,6 @@ header nav ul li a {
 .caption .go-divider {
   display: inline-block;
   font-size: 12px;
-  line-height: 16px;
   padding: 0;
   margin: 0;
   vertical-align: middle;
@@ -372,7 +376,6 @@ header nav ul li a {
   color: black;
   display: inline-block;
   font-size: 12px;
-  line-height: 16px;
   padding: 5px 0 5px 0;
   margin: 0;
   vertical-align: middle;
@@ -382,6 +385,18 @@ header nav ul li a {
 .caption .go-next:hover {
   color: var(--intorange);
   font-size: 14px;
+}
+
+@keyframes color {
+  0% {
+    color: inherit;
+  }
+  50% {
+    color: var(--intorange);
+  }
+  100% {
+    color: inherit;
+  }
 }
 
 .slick-prev {

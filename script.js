@@ -226,6 +226,7 @@ $(function () {
 		slideWrapper.slick("slickNext");
 	});
 
+
 	if ($.fn.slick) {
 		// check if slick exist
 		//start the slider
