@@ -167,6 +167,13 @@ $(function () {
 		});
 	}
 
+
+
+
+
+
+
+
 	slideWrapper.on("init", function (slick) {
 		slick = $(slick.currentTarget);
 		//newSrc();
@@ -195,6 +202,16 @@ $(function () {
 				"https://player.vimeo.com/video/825722519?autoplay=0&muted=1&controls=0&autopause=0";
 		} else {
 			resizePlayer(iframes, 16 / 9);
+		}
+
+		$(".slick-prev").on('mouseover', mouseOverHitBox($(".slick-prev")));
+		$(".slick-prev").on('mouseout', mouseOutHitBox($(".slick-prev")));
+
+		function mouseOverHitBox(e) {
+			//console.log(e);
+			//e.css('cursor', 'none');
+		}
+		function mouseOutHitBox(e) {
 		}
 	});
 
