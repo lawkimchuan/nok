@@ -34,9 +34,14 @@ function playPauseVideo(slick, control) {
 			player.off("ended");
 			player.on("ended", function (data) {
 				console.log("video ended");
-				play_count++;
+				//play_count++;
 				console.log(play_count);
 
+				player.pause();
+				play_count = 0;
+				slideWrapper.slick("slickNext");
+
+				/*
 				if (play_count > 1) {
 					player.pause();
 					play_count = 0;
@@ -45,6 +50,7 @@ function playPauseVideo(slick, control) {
 					player.setCurrentTime(0);
 					player.play();
 				}
+				*/
 			});
 			break;
 		case "pause":
@@ -169,11 +175,6 @@ $(function () {
 
 
 
-
-
-
-
-
 	slideWrapper.on("init", function (slick) {
 		slick = $(slick.currentTarget);
 		//newSrc();
@@ -204,15 +205,7 @@ $(function () {
 			resizePlayer(iframes, 16 / 9);
 		}
 
-		$(".slick-prev").on('mouseover', mouseOverHitBox($(".slick-prev")));
-		$(".slick-prev").on('mouseout', mouseOutHitBox($(".slick-prev")));
 
-		function mouseOverHitBox(e) {
-			//console.log(e);
-			//e.css('cursor', 'none');
-		}
-		function mouseOutHitBox(e) {
-		}
 	});
 
 	slideWrapper.on("beforeChange", function (event, slick) {
@@ -256,6 +249,11 @@ $(function () {
 			cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)",
 		});
 	}
+});
+
+//Resize event
+$(window).on("resize.slickVideoPlayer", function () {
+	resizePlayer(iframes, 16 / 9);
 });
 
 var tl = gsap.timeline({ onComplete: animCompleted });
