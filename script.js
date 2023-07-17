@@ -81,6 +81,7 @@ function resizePlayer(iframes, ratio) {
 		if (scrWidth < 688) {
 			console.log("video is portrait");
 			//playerWidth = Math.ceil(height * ratio);
+			//console.log("Ratio: " + ratio);
 			playerWidth = width;
 			current
 				.width(playerWidth)
@@ -91,7 +92,9 @@ function resizePlayer(iframes, ratio) {
 				});
 		} else {
 			console.log("video is landscape");
+			//console.log("Ratio: " + ratio);
 			playerHeight = Math.ceil(width / ratio);
+			console.log("player height: " + playerHeight);
 			current
 				.width(width)
 				.height(playerHeight)
@@ -253,7 +256,8 @@ $(function () {
 
 //Resize event
 $(window).on("resize.slickVideoPlayer", function () {
-	resizePlayer(iframes, 16 / 9);
+	//resizePlayer(iframes, 16 / 9);
+	location.reload();
 });
 
 var tl = gsap.timeline({ onComplete: animCompleted });
