@@ -231,7 +231,6 @@ header nav ul li a {
   visibility: hidden;
   transition: all 1.2s ease;
   overflow-y: scroll;
-  background-color: #000;
 }
 .main-slider.slick-initialized {
   opacity: 1;
@@ -650,6 +649,7 @@ header nav ul li a {
 
   .main-slider {
     overflow-y: hidden;
+    background-color: #000;
   }
 
   .landing .quote {

@@ -81,7 +81,6 @@ function resizePlayer(iframes, ratio) {
 		if (scrWidth < 688) {
 			console.log("video is portrait");
 			//playerWidth = Math.ceil(height * ratio);
-			//console.log("Ratio: " + ratio);
 			playerWidth = width;
 			current
 				.width(playerWidth)
@@ -92,15 +91,19 @@ function resizePlayer(iframes, ratio) {
 				});
 		} else {
 			console.log("video is landscape");
-			//console.log("Ratio: " + ratio);
+			//playerWidth = Math.ceil(height * ratio);
 			playerHeight = Math.ceil(width / ratio);
-			console.log("player height: " + playerHeight);
+			//console.log((width - playerWidth) / 2);
+			//console.log("width: " + width);
+			//console.log("player width: " + playerWidth);
 			current
 				.width(width)
 				.height(playerHeight)
 				.css({
 					left: 0,
+					//left: (width - playerWidth) / 2,
 					top: (height - playerHeight) / 2,
+					//top: 0,
 				});
 		}
 	});
