@@ -69,7 +69,9 @@ function resizePlayer(iframes, ratio) {
 		playerWidth,
 		height = win.height(),
 		playerHeight,
+		iframe_offset,
 		ratio = ratio || 16 / 9;
+
 
 	clony = $(".slick-cloned");
 
@@ -77,9 +79,12 @@ function resizePlayer(iframes, ratio) {
 
 	combined.each(function () {
 		var current = $(this);
+		var current_iframe = current[0];
+		//console.log(current_iframe);
+
 		let scrWidth = screen.width;
 		if (scrWidth < 688) {
-			console.log("video is portrait");
+			console.log("mobile");
 			//playerWidth = Math.ceil(height * ratio);
 			playerWidth = width;
 			current
@@ -89,13 +94,28 @@ function resizePlayer(iframes, ratio) {
 					left: (width - playerWidth) / 2,
 					top: 0,
 				});
-		} else {
-			console.log("video is landscape");
-			//playerWidth = Math.ceil(height * ratio);
+		}
+		else if ((scrWidth > 688) && (scrWidth < 1280)) {
+			console.log("tablet");
+			playerWidth = Math.ceil(height * ratio);
 			playerHeight = Math.ceil(width / ratio);
-			//console.log((width - playerWidth) / 2);
-			//console.log("width: " + width);
-			//console.log("player width: " + playerWidth);
+			iframe_offset = (width - playerWidth) / 2;
+
+			current
+				.width(playerWidth)
+				.height(height)
+				.css({
+					left: 0,
+					//left: (width - playerWidth) / 2,
+					//top: (height - playerHeight) / 2,
+					top: 0,
+				});
+		}
+		else {
+			console.log("laptop");
+			playerWidth = Math.ceil(height * ratio);
+			playerHeight = Math.ceil(width / ratio);
+
 			current
 				.width(width)
 				.height(playerHeight)
@@ -106,7 +126,12 @@ function resizePlayer(iframes, ratio) {
 					//top: 0,
 				});
 		}
+
 	});
+
+	//this is to move the iframe within the slide
+	//iframes[0].style.left = "-50px";
+
 }
 
 //exit animation of main page

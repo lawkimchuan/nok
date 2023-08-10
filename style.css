@@ -616,6 +616,7 @@ header nav ul li a {
 /* MEDIA QUERY */
 /* ---------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------- */
+
 @media screen and (min-width: 688px) {
   .mobile {
     display: none;
@@ -657,8 +658,8 @@ header nav ul li a {
   }
 
   .landing .quote p {
-    font-size: 6rem;
-    line-height: 7rem;
+    font-size: 4rem;
+    line-height: 5rem;
   }
 
   .landing video {
@@ -765,5 +766,16 @@ header nav ul li a {
 
   .about .address {
     min-height: 100px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .landing .quote {
+    left: 60px;
+  }
+
+  .landing .quote p {
+    font-size: 6rem;
+    line-height: 7rem;
   }
 }
