@@ -232,6 +232,9 @@ header nav ul li a {
   transition: all 1.2s ease;
   overflow-y: scroll;
 }
+.main-slider .slick-slide {
+  overflow-y: hidden;
+}
 .main-slider.slick-initialized {
   opacity: 1;
   visibility: visible;

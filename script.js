@@ -61,9 +61,23 @@ function playPauseVideo(slick, control) {
 	}
 }
 
+//Offset to center the video
+function offsetVideo(offset_amount) {
+	console.log("offset video by: " + offset_amount)
+	document.getElementById("slide1").style.left = offset_amount;
+	document.getElementById("slide2").style.left = offset_amount;
+	document.getElementById("slide3").style.left = offset_amount;
+	document.getElementById("slide4").style.left = offset_amount;
+	document.getElementById("slide5").style.left = offset_amount;
+	document.getElementById("slide6").style.left = offset_amount;
+	document.getElementById("slide7").style.left = offset_amount;
+}
+
 // Resize player
 function resizePlayer(iframes, ratio) {
+
 	if (!iframes[0]) return;
+	let scrWidth = screen.width;
 	var win = $(".main-slider"),
 		width = win.width(),
 		playerWidth,
@@ -72,17 +86,13 @@ function resizePlayer(iframes, ratio) {
 		iframe_offset,
 		ratio = ratio || 16 / 9;
 
-
 	clony = $(".slick-cloned");
 
 	var combined = iframes.add(clony);
 
 	combined.each(function () {
 		var current = $(this);
-		var current_iframe = current[0];
-		//console.log(current_iframe);
 
-		let scrWidth = screen.width;
 		if (scrWidth < 688) {
 			console.log("mobile");
 			//playerWidth = Math.ceil(height * ratio);
@@ -99,7 +109,6 @@ function resizePlayer(iframes, ratio) {
 			console.log("tablet");
 			playerWidth = Math.ceil(height * ratio);
 			playerHeight = Math.ceil(width / ratio);
-			iframe_offset = (width - playerWidth) / 2;
 
 			current
 				.width(playerWidth)
@@ -110,28 +119,68 @@ function resizePlayer(iframes, ratio) {
 					//top: (height - playerHeight) / 2,
 					top: 0,
 				});
+
+			iframe_offset = (width - playerWidth) / 2 + "px";
+			offsetVideo(iframe_offset);
 		}
 		else {
 			console.log("laptop");
 			playerWidth = Math.ceil(height * ratio);
 			playerHeight = Math.ceil(width / ratio);
 
-			current
-				.width(width)
-				.height(playerHeight)
-				.css({
-					left: 0,
-					//left: (width - playerWidth) / 2,
-					top: (height - playerHeight) / 2,
-					//top: 0,
-				});
+			console.log("width: " + width);
+			console.log("height: " + height);
+			console.log("ratio: " + width / height);
+
+			if ((width / height) > 1.4 && (width / height) <= 1.77) {
+				console.log("longish");
+				current
+					.width(playerWidth)
+					.height(height)
+					//.height(playerHeight)
+					.css({
+						left: 0,
+						//left: (width - playerWidth) / 2,
+						//top: (height - playerHeight) / 2,
+						top: 0,
+					});
+
+				iframe_offset = (width - playerWidth) / 2 + "px";
+				offsetVideo(iframe_offset);
+
+			}
+			else if ((width / height) > 1.77) {
+				console.log("very longish");
+				current
+					.width(width)
+					.height(playerHeight)
+					//.height(playerHeight)
+					.css({
+						left: 0,
+						//left: (width - playerWidth) / 2,
+						//top: (height - playerHeight) / 2,
+						top: 0,
+					});
+			}
+			else {
+				console.log("squarish");
+				current
+					//.width(playerWidth)
+					.width(playerWidth)
+					.height(height)
+					//.height(playerHeight)
+					.css({
+						left: 0,
+						//left: (width - playerWidth) / 2,
+						//top: (height - playerHeight) / 2,
+						top: 0,
+					});
+
+				iframe_offset = (width - playerWidth) / 2 + "px";
+				offsetVideo(iframe_offset);
+			}
 		}
-
 	});
-
-	//this is to move the iframe within the slide
-	//iframes[0].style.left = "-50px";
-
 }
 
 //exit animation of main page
