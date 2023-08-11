@@ -233,7 +233,7 @@ header nav ul li a {
   overflow-y: scroll;
 }
 .main-slider .slick-slide {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .main-slider.slick-initialized {
   opacity: 1;
